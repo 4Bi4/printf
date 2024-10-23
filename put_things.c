@@ -42,8 +42,7 @@ static int  ft_nlen(int n)
     {  
         len++;
         n = n / 10;
-    }  
-    return (len);
+}    return (len);
 }
 
 char    *ft_itoa(int n) 
