@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:56:25 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/22 17:51:57 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:39:24 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,16 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (s[i])
-		i += write(1, s, 1);
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
 	return (i);
 }
 

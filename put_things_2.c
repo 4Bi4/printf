@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:38:52 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/29 10:07:53 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:09:37 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ int	ft_putptr(unsigned long int nb)
 	char	*base;
 	int		count;
 
-	count = 0;
+	count = 2;
 	base = "0123456789abcdef";
+	if (nb == '\0')
+		return (write(1, "(nil)", 5));
 	ft_putstr("0x");
 	if (nb >= 16)
 	{

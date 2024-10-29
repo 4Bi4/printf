@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:20:50 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/29 10:11:41 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:13:46 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,28 @@
 int	ft_type_detect(va_list parameters, char full_str)
 {
 	int		count;
-	char	*base;
-	char	*BASE;
 
 	count = 0;
-	base = "0123456789abcdef";
-	BASE = "0123456789ABCDEF";
 	if (full_str == 'c')
-		count = ft_putchar(va_arg(parameters, int));
+		count += ft_putchar(va_arg(parameters, int));
 	else if (full_str == 's')
-		count = ft_putstr(va_arg(parameters, char *));
+		count += ft_putstr(va_arg(parameters, char *));
 	else if (full_str == 'p')
-		count = ft_putptr(va_arg(parameters, unsigned long int));
+		count += ft_putptr(va_arg(parameters, unsigned long int));
 	else if (full_str == 'i')
-		count = ft_putnbr(va_arg(parameters, int));
+		count += ft_putnbr(va_arg(parameters, int));
 	else if (full_str == 'd')
-		count = ft_putnbr(va_arg(parameters, int));
+		count += ft_putnbr(va_arg(parameters, int));
 	else if (full_str == 'u')
-		count = ft_putnbr_unsigned(va_arg(parameters, unsigned int));
+		count += ft_putnbr_unsigned(va_arg(parameters, unsigned int));
 	else if (full_str == 'x')
-		count = ft_putnbr_hexadecimal(va_arg(parameters,  unsigned long int), base);
+		count += ft_putnbr_hexadecimal(va_arg(parameters, unsigned long int),
+				"0123456789abcdef");
 	else if (full_str == 'X')
-		count = ft_putnbr_hexadecimal(va_arg(parameters, unsigned long int), BASE);
+		count += ft_putnbr_hexadecimal(va_arg(parameters, unsigned long int),
+				"0123456789ABCDEF");
 	else if (full_str == '%')
-		count = ft_putchar(full_str);
+		count += ft_putchar(full_str);
 	return (count);
 }
 
@@ -64,10 +62,10 @@ int	ft_printf(char const *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			count = ft_type_detect(parameters, *str++);
+			count += ft_type_detect(parameters, *str++);
 		}
 		else
-			count = ft_putchar(*str++);
+			count += ft_putchar(*str++);
 	}
 	va_end(parameters);
 	return (count);
