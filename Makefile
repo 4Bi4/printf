@@ -1,5 +1,5 @@
 CC = cc
-CCFLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Werror -Wextra 
 
 NAME = libftprintf.a
 INCLUDES = ft_printf.h

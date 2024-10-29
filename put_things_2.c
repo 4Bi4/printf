@@ -6,13 +6,13 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:38:52 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/29 12:09:37 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/29 14:49:24 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hexadecimal(unsigned long int nb, char *base)
+int	ft_putnbr_hexadecimal(unsigned long long nb, char *base)
 {
 	int	count;
 
@@ -27,7 +27,7 @@ int	ft_putnbr_hexadecimal(unsigned long int nb, char *base)
 	return (count);
 }
 
-int	ft_putptr(unsigned long int nb)
+int	ft_putptr(unsigned long long nb)
 {
 	char	*base;
 	int		count;
