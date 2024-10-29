@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   put_things_2.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/24 12:38:52 by labia-fe          #+#    #+#             */
+/*   Updated: 2024/10/29 10:07:53 by labia-fe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_putnbr_hexadecimal(unsigned long int nb, char *base)
@@ -30,5 +42,5 @@ int	ft_putptr(unsigned long int nb)
 	}
 	else
 		count += ft_putchar(base[nb]);
-	return (count)
+	return (count);
 }

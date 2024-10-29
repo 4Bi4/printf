@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/24 12:20:50 by labia-fe          #+#    #+#             */
+/*   Updated: 2024/10/29 10:11:41 by labia-fe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 // %c single character.
 // %s string (multiple characters).
@@ -33,30 +44,30 @@ int	ft_type_detect(va_list parameters, char full_str)
 	else if (full_str == 'u')
 		count = ft_putnbr_unsigned(va_arg(parameters, unsigned int));
 	else if (full_str == 'x')
-		count = ft_putnbr_hexadecimal(va_arg(parameters, base));
+		count = ft_putnbr_hexadecimal(va_arg(parameters,  unsigned long int), base);
 	else if (full_str == 'X')
-		count = ft_putnbr_hexadecimal(va_arg(parameters, BASE));
+		count = ft_putnbr_hexadecimal(va_arg(parameters, unsigned long int), BASE);
 	else if (full_str == '%')
 		count = ft_putchar(full_str);
 	return (count);
 }
 
-int	ft_printf(char const *full_str, ...)
+int	ft_printf(char const *str, ...)
 {
 	va_list	parameters;
 	int		count;
 
 	count = 0;
-	va_start(parameters, full_str)
-	while (*full_str)
+	va_start(parameters, str);
+	while (*str)
 	{
-		if (*full_str == '%')
+		if (*str == '%')
 		{
-			full_str++;
-			count = ft_type_detect(parameters, *full_str++);
+			str++;
+			count = ft_type_detect(parameters, *str++);
 		}
 		else
-			count = ft_putchar(*full_str++);
+			count = ft_putchar(*str++);
 	}
 	va_end(parameters);
 	return (count);

@@ -14,8 +14,7 @@
 
 int	ft_putchar(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
 
 int	ft_putstr(char *s)
@@ -24,10 +23,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	while (s[i])
-	{
-		write(1, s, 1);
-		i++;
-	}
+		i += write(1, s, 1);
 	return (i);
 }
 
@@ -56,7 +52,7 @@ int	ft_putnbr(int nb)
 int	ft_putnbr_unsigned(unsigned int nb)
 {
 	unsigned int	num;
-	int				count
+	int				count;
 
 	num = nb;
 	count = 0;
@@ -67,5 +63,5 @@ int	ft_putnbr_unsigned(unsigned int nb)
 	}
 	else
 		count += ft_putchar(num + '0');
-	return (count)
+	return (count);
 }
