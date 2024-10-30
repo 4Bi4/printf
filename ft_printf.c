@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:20:50 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/29 14:50:18 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/30 12:50:20 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ int	ft_printf(char const *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			count += ft_type_detect(parameters, *str++);
+			count += ft_type_detect(parameters, *str);
+			if (*str)
+				str++;
 		}
 		else
 			count += ft_putchar(*str++);

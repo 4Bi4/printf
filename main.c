@@ -6,7 +6,7 @@
 /*   By: labia-fe <labia-fe@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:52:40 by labia-fe          #+#    #+#             */
-/*   Updated: 2024/10/29 14:48:17 by labia-fe         ###   ########.fr       */
+/*   Updated: 2024/10/30 10:32:44 by labia-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	main(void)
 	ft_printf("return %d\n", ret);
 	ret = printf("TEST OG 1: string = %s\n", oso);
 	printf("return %d\n", ret);
-	ret = ft_printf("TEST FT 2: void * en hexa = %p\n", -9223372036854775808);
+	ret = ft_printf("TEST FT 2: void * en hexa = %p\n", oso);
 	ft_printf("return %d\n", ret);
-	ret = printf("TEST OG 2: void * en hexa = %p\n", -9223372036854775808);
+	ret = printf("TEST OG 2: void * en hexa = %p\n", oso);
 	printf("return %d\n", ret);
 	ret = ft_printf("TEST FT 3: numero = %i\n", nice);
 	ft_printf("return %d\n", ret);
